@@ -7,6 +7,8 @@
   version="4.0"
   metadata-complete="true">
 
-    
+    <welcome-file-list> 
+ <welcome-file>haha.jsp </welcome-file>
+    </welcome-file-list>
 
 </web-app>
