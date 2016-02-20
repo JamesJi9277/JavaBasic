@@ -21,12 +21,15 @@
       return x * y;
     }
   %>
+  <!--out.print("<br>")是换行的意思-->
+  <%-- + “&nbsp;&nbsp；”表示两个空格。一个空格的写法是"&nbsp;"--%>
   <%
     //单行注释
     /**
      *
      * 多行注释
      */
+
     out.print("<br>");
     out.println(s);
     out.print("<br>");
