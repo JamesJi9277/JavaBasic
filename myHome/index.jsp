@@ -66,7 +66,7 @@
 <body>
   <h1>out内置对象</h1>
   <%
-    out.clear(); 
+    out.clear();
     out.println("<h2>静夜思</h2>");
     out.println("床前明月光<br>");
     out.println("一起地上霜<br>");
