@@ -14,14 +14,20 @@
   <h1>request内置对象</h1>
   <hr>
   <%
-    request.setCharacterEncoding("utf-8");//解决中文乱码问题
+      request.setCharacterEncoding("utf-8");//解决中文乱码问题
+      request.setAttribute("password", "123456");
   %>
   用户名: <%=request.getParameter("username")%><br>
   爱好: <%
-    String[] f = request.getParameterValues("favourite");
-    for(int i = 0; i < f.length; i++) {
-        out.println(f[i] + "&nbsp;&nbsp;");
+    if(request.getParameterValues("favourite")!= null) {
+        String[] f = request.getParameterValues("favourite");
+        for (int i = 0; i < f.length; i++) {
+            out.println(f[i] + "&nbsp;&nbsp;");
+        }
     }
-  %>
+  %><br>
+   密码: <%=request.getAttribute("password")%> <br>
+   请求体的MIME类型: <%=request.getContentType()%>; <br>
+   协议类型以及版本号: <%=request.getProtocol()%> <br>
 </body>
 </html>

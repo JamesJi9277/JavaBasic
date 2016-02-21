@@ -13,11 +13,12 @@
 <body>
   <h1>用户登录</h1>
   <hr>
+  <hr>
   <form action=" doLogin.jsp" name = "loginForm" method="post">
       <table>
           <tr>
-              <td>用户名: </td>
-              <td><input type = "text" name = "username"/> </td>
+              <th>用户名: </th>
+              <th><input type = "text" name = "username"/> </th>
           </tr>
           <tr>
               <td>密码: </td>
