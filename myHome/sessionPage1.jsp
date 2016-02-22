@@ -8,7 +8,7 @@
 <%@ page import="java.util.*, java.text.*" contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>This is session page</title>
+    <title>sessionPage1</title>
 </head>
 <body>
 <h1>This is session page</h1>
@@ -21,7 +21,8 @@
     session.setAttribute("password", "123456");
     session.setAttribute("age", "20");
     //设置当前session最大生存期限,单位秒
-    session.setMaxInactiveInterval(10);
+    //session.setMaxInactiveInterval(10);
+
 %>
 Session创建的时间: <%=sdf.format(d)%> <br>
 Session的ID编号: <%=session.getId()%><br>
@@ -33,8 +34,9 @@ Session中保存的属性有: <br><%
         out.println("<br>");
     }
 %>
-<%
-
+<%session.invalidate();
+//表示一个java语句
 %>
+<a href="sessionPage2.jsp" target="_blank">跳转到sessionPage2</a>
 </body>
 </html>
