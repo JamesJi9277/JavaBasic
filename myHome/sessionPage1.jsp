@@ -34,9 +34,8 @@ Session中保存的属性有: <br><%
         out.println("<br>");
     }
 %>
-<%session.invalidate();
-//表示一个java语句
-%>
+
+Session中的对象用户名是: <%=pageContext.getSession().getAttribute("username")%> <br>
 <a href="sessionPage2.jsp" target="_blank">跳转到sessionPage2</a>
 </body>
 </html>
