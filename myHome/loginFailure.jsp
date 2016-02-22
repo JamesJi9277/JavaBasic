@@ -19,20 +19,11 @@
 <body>
 <div id="container">
     <div class="logo">
-        <a href="#"><img src="user/desktop/downloads/Screen/FF.png" alt="" /></a>
+        <a href="#"><img src="/Users/jiqi/Downloads/Screen/179-8.jpg" alt="" /></a>
     </div>
     <div id="box">
-        <form action="doLogin1.jsp" method="post">
-            <p class="main">
-                <label>用户名: </label>
-                <input name="username" value="" />
-                <label>密码: </label>
-                <input type="password" name="password" value="">
-            </p>
-            <p class="space">
-                <input type="submit" value="登录" class="login" style="cursor: pointer;"/>
-            </p>
-        </form>
+        登录失败,请检查用户名或者密码!<br>
+        <a href="login.jsp">返回登录</a>
     </div>
 </div>
 </body>

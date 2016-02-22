@@ -6,7 +6,7 @@
 <html>
 <head>
     <!-- Page title -->
-    <title>login project</title>
+    <title>loginSuccess</title>
     <!-- End of Page title -->
     <!-- Libraries -->
     <link type="text/css" href="css/login.css" rel="stylesheet" />
@@ -22,17 +22,13 @@
         <a href="#"><img src="user/desktop/downloads/Screen/FF.png" alt="" /></a>
     </div>
     <div id="box">
-        <form action="doLogin1.jsp" method="post">
-            <p class="main">
-                <label>用户名: </label>
-                <input name="username" value="" />
-                <label>密码: </label>
-                <input type="password" name="password" value="">
-            </p>
-            <p class="space">
-                <input type="submit" value="登录" class="login" style="cursor: pointer;"/>
-            </p>
-        </form>
+        <%
+            String loginUser = "";
+            if(session.getAttribute("loginUser") != null) {
+                loginUser = session.getAttribute("loginUser").toString();
+            }
+        %>
+        欢迎您<font color="red"><%=loginUser%> </font>,登陆成功!
     </div>
 </div>
 </body>

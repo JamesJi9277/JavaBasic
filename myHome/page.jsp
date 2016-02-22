@@ -22,9 +22,12 @@
 int i = 20;
 %>
 <%
-session.setAttribute("username", i);
+//session.setAttribute("username", i);
 %>
 利用page指令的到的session用户名是: <%=pageContext.getSession().getAttribute("username")%><br>
-
+<%
+// pageContext.forward("register.jsp");
+    pageContext.include("register.jsp");
+%>
 </body>
 </html>
