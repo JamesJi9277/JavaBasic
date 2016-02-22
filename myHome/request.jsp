@@ -29,5 +29,11 @@
    密码: <%=request.getAttribute("password")%> <br>
    请求体的MIME类型: <%=request.getContentType()%>; <br>
    协议类型以及版本号: <%=request.getProtocol()%> <br>
+   服务器主机名: <%=request.getServerName()%>  <br>
+   服务器端口号: <%=request.getServerPort()%> <br>
+   字符编码模式: <%=request.getCharacterEncoding()%> <br>
+   请求体的长度: <%=request.getContentLength()%> <br>
+   客户端的IP地址: <%=request.getRemoteAddr()%> <br>
+   <%=response.getCharacterEncoding()%> <br>
 </body>
 </html>
