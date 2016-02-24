@@ -19,8 +19,10 @@
 <%--手动去赋值--%>
 <jsp:setProperty name="myUser" property="password" value="1234"/>
 <jsp:setProperty name="myUser" property="username" value="admin1" />
+
 <%--通过URL传参数,来给属性赋值--%>
-<%--http://localhost:8080/JavaWeb/doLoginExample.jsp?mypass=999999 这是当前的地址栏--%>
+http://localhost:8080/JavaWeb/doLoginExample.jsp?mypass=999999 这是当前的地址栏
+<jsp:setProperty name="myUser" property="username" value="zhangsan"/>
 <jsp:setProperty name="myUser" property="password" param="mypass"/>
 用户名: <%=myUser.getUsername()%> <br>
 密码: <%=myUser.getPassword()%><br>

@@ -13,7 +13,7 @@
 <body>
 <h1>登录系统</h1>
 <hr>
-<form name="loginForm" action="doLoginExample.jsp?mypass=999999" method="post">
+<form name="loginForm" action="doLoginExample.jsp?mypass=9277" method="post">
     <table>
         <tr>
             <th>用户名</th>
