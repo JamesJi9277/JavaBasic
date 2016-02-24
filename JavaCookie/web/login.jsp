@@ -14,6 +14,7 @@
     <h1>This is Cookie page</h1>
     <hr>
     <%
+        request.setCharacterEncoding("utf-8");
         String username = "";
         String password = "";
         Cookie[] cookies = request.getCookies();
