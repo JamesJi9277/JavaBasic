@@ -1,0 +1,4 @@
+手工编写第一个Servlet
+  1.首先写一个类来继承HttpServlet
+  2.重写doGet()或者doPost()方法，取决于用户提交请求的方式，分为get和post的两个方式来提交请求
+  3.在web.xml中注册Servlet
