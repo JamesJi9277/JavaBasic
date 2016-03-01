@@ -36,5 +36,8 @@
     <h1>This is servlet demo</h1>
     <hr>
     <a href="servlet/HelloServlet">Get方式请求helloServlet</a>
+    <form action="servlet/helloServlet" method="post"> 
+      <input type="submit" value="用post方式请求helloServlet"/>
+    </form>
   </body>
 </html>
