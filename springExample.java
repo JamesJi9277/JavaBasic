@@ -24,7 +24,9 @@ public void myDrawMethod(Shape shape) {
 Shape shape = new Triangle();
 shape.myDrawMethod();
 
-
+//separting the dependency out of the whole class
+//跟interface很类似，当drawing的对象或者形状更换了的时候，drawing class不需要更改任何一行代码
+//只需要知道自己干的活是setter和drawing就够了
 class member variable
  using a drawing class
  //define a public setter
@@ -38,7 +40,10 @@ protected class Drawing {
 		this.shape.draw();
 	}
 }
-
+Drawing drawing = new Drawing();
+Triangle myTriangle = new Triangle();
+drawing.setShape(myTraingle);
+drawing.drawShape();
 
 different class
 
