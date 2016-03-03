@@ -24,18 +24,21 @@ public void myDrawMethod(Shape shape) {
 Shape shape = new Triangle();
 shape.myDrawMethod();
 
-drawing class
+
+class member variable
+ using a drawing class
+ //define a public setter
 protected class Drawing {
 	private Shape shape;
-
+	//define a setter method
 	public setShape(Shape shape) {
 		this.shape = shape;
 	}
-
-	public drawShape() {
+	public void drawShape() {
 		this.shape.draw();
 	}
 }
+
 
 different class
 
