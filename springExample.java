@@ -8,14 +8,21 @@ myCircle.draw();
 
 using polymorphism
 新建一个shape interface或者abstract class，circle和triangle两个类要去
-override shape里面的draw方法
-
+override   shape里面的draw方法
+//using polymorphism concept instead of calling teh method of object itself
 Shape shape = new Triangle();
 shape.draw();//draw a triangle
 
 Shape shape = new Circle();
 shape.draw();//draw a circle
 
+method parameter
+
+public void myDrawMethod(Shape shape) {
+	shape.draw();
+}
+Shape shape = new Triangle();
+shape.myDrawMethod();
 
 drawing class
 protected class Drawing {
