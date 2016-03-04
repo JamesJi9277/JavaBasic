@@ -13,10 +13,15 @@ public class Triangle {
 	public Triangle(String type) {
 		this.type = type;
 	}
+	public Triangle(int height) {
+		this.height = height;
+	}
 	public Triangle(String type, int height) {
 		this.height = height;
 		this.type = type;
 	}
+	
+	
 	public String getType() {
 		return type;
 	}
@@ -26,6 +31,7 @@ public class Triangle {
 //	}
 
 	public void draw() {
-		System.out.println(this.getType() + "三角形\n画好了 " );
+		System.out.println("Type is " + this.getType());
+		System.out.println("Height is "+ this.getHeight());
 	}
 }
