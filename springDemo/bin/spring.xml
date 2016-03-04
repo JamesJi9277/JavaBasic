@@ -4,7 +4,10 @@
 
 <beans>
     <bean id="triangle" class="springDemo.Triangle">
-        <constructor-arg value="Equilateral" />
+    <!-- 这是用bean本身去对setter进行定义，利用property进行injection -->
+        <!-- <property name="type" value="Equilateral" /> -->
+        <constructor-arg value="等边的" />
+        <constructor-arg value="20" />
     </bean>
     <bean id="circle" class="springDemo.Circle" />
 </beans>
