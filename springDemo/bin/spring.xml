@@ -27,7 +27,7 @@
     </bean>
     <bean id="circle" class="springDemo.Circle" /> -->
     
-    <bean id="triangle" class="springDemo.Triangle" >
+    <bean id="triangle" class="springDemo.Triangle" scope="prototype">
        <!-- <property name="points">
            <list>
                <ref bean="pointA" />
@@ -39,6 +39,7 @@
        <property name="pointB" ref="pointB" />
        <property name="pointC" ref="pointC" />
     </bean>
+    
     <bean id="pointA" class="springDemo.Point">
         <property name="x" value="0" />
         <property name="y" value="0" />
