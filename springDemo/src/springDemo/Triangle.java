@@ -1,4 +1,6 @@
 package springDemo;
+import java.util.*;
+
 
 public class Triangle {
 //	private String type;
@@ -39,6 +41,7 @@ public class Triangle {
 	private Point pointB;
 	private Point pointC;
 	
+	//private List<Point> points;
 	
 	
 	public Point getPointA() {
@@ -77,9 +80,22 @@ public class Triangle {
 
 
 
+//	public List<Point> getPoints() {
+//		return points;
+//	}
+//
+//
+//	public void setPoints(List<Point> points) {
+//		this.points = points;
+//	}
+
+
 	public void draw() {
 		System.out.println("Three points are\n" + "(" + this.getPointA().getX() + "," + this.getPointA().getY() + ")"
 				+ "  \n" + "(" + this.getPointB().getX() + "," + this.getPointB().getY()+ ")" 
 				+"\n" + "(" + this.getPointC().getX() + "," + this.getPointC().getY()+ ")");
+//	    for(Point point : points) {
+//	    	System.out.print("(" + point.getX() + "," + point.getY() + ")" + "\n");
+//	    }
 	}
 }

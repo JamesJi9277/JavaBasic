@@ -27,27 +27,29 @@
     </bean>
     <bean id="circle" class="springDemo.Circle" /> -->
     
-    <bean id="triangle" class="springDemo.Triangle">
-        <property name="pointA" ref="zeroPoint" />
-        <!-- inner bean -->
-        <property name="pointB">
-        <!--这下面的bean可以加id也可以不加 -->
-            <bean id="ss" class="springDemo.Point">
-                <property name="x" value="20" />
-                <property name="y" value="0" />
-            </bean>
-        </property>
-        
-        <property name="pointC">
-            <bean class="springDemo.Point">
-                <property name="x" value="-20" />
-                <property name="y" value="0" />
-            </bean>
-        </property>
+    <bean id="triangle" class="springDemo.Triangle" >
+       <!-- <property name="points">
+           <list>
+               <ref bean="pointA" />
+               <ref bean="pointB" />
+               <ref bean="pointC" />
+           </list>
+       </property> -->
+       <property name="pointA" ref="pointA" />
+       <property name="pointB" ref="pointB" />
+       <property name="pointC" ref="pointC" />
     </bean>
-    <bean id="zeroPoint" class="springDemo.Point">
+    <bean id="pointA" class="springDemo.Point">
         <property name="x" value="0" />
         <property name="y" value="0" />
     </bean>
+    <bean id="pointB" class="springDemo.Point">
+                <property name="x" value="20" />
+                <property name="y" value="0" />
+            </bean>
+     <bean id="pointC" class="springDemo.Point">
+                <property name="x" value="-20" />
+                <property name="y" value="0" />
+            </bean>
     <alias name="triangle" alias="triangle-alias"/>
 </beans>
