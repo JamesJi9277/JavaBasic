@@ -3,10 +3,10 @@
 
 
 <beans>
-    <bean id="triangle" class="springDemo.Triangle">
-    <!-- 这是用bean本身去对setter进行定义，利用property进行injection -->
-        <!-- <property name="type" value="Equilateral" /> -->
-        <!-- 八种primitive type
+    <!-- <bean id="triangle" class="springDemo.Triangle">
+    这是用bean本身去对setter进行定义，利用property进行injection
+        <property name="type" value="Equilateral" />
+        八种primitive type
         boolean	 8	 true, false （只有兩個）
         char	 16	 '\u0000'～'\uffff' （Unicode 字集）
         byte	 8	 整數：-128～127
@@ -14,16 +14,37 @@
         int	     32	 整數：-2147483648～2147483647
         long	 64	 -9223372036854775808～9223372036854775807
         float    32	 ±1.4E-45～±3.4028235E+38
-        double	 64	 ±4.9E-324～±1.79769313486231570E+308 -->
+        double	 64	 ±4.9E-324～±1.79769313486231570E+308
         
-        <!-- 利用type来赋值
-        <constructor-arg type="java.lang.String" value="等边的" /> -->
-        <!-- <constructor-arg type="int" value="20" /> -->
+        利用type来赋值
+        <constructor-arg type="java.lang.String" value="等边的" />
+        <constructor-arg type="int" value="20" />
         
         
-        <!-- 利用index来赋值 -->
+        利用index来赋值
         <constructor-arg index="0" value="等边" />
         <constructor-arg index="1" value="20" />
     </bean>
-    <bean id="circle" class="springDemo.Circle" />
+    <bean id="circle" class="springDemo.Circle" /> -->
+    
+    <bean id="triangle" class="springDemo.Triangle">
+        <property name="pointA" ref="zeroPoint" />
+        <property name="pointB" ref="point2" />
+        <property name="pointC" ref="point3" />
+    </bean>
+    <bean id="zeroPoint" class="springDemo.Point">
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="point2" class="springDemo.Point">
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="point3" class="springDemo.Point">
+        <property name="x" value="20" />
+        <property name="y" value="0" />
+    </bean>
+    
 </beans>
