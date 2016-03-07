@@ -30,7 +30,7 @@ public class DrawingApp {
 //		triangle.setPointB(pointB);
 //		triangle.setPointC(pointC);
 		//利用context这个bean factory来getBean
-		Triangle triangle = (Triangle)context.getBean("triangle");
+		Triangle triangle = (Triangle)context.getBean("triangle-alias");
 		triangle.draw();
 	}
 

@@ -78,8 +78,8 @@ public class Triangle {
 
 
 	public void draw() {
-		System.out.println("Three points are\n" + this.getPointA().getX() + "  " + this.getPointA().getY()
-				+ "  \n" + this.getPointB().getX() + "  " + this.getPointB().getY() + " "
-				+"  \n" + this.getPointC().getX() + "  " + this.getPointC().getY());
+		System.out.println("Three points are\n" + "(" + this.getPointA().getX() + "," + this.getPointA().getY() + ")"
+				+ "  \n" + "(" + this.getPointB().getX() + "," + this.getPointB().getY()+ ")" 
+				+"\n" + "(" + this.getPointC().getX() + "," + this.getPointC().getY()+ ")");
 	}
 }
