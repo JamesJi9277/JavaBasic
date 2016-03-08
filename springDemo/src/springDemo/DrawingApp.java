@@ -3,6 +3,7 @@ package springDemo;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
@@ -31,9 +32,13 @@ public class DrawingApp {
 //		triangle.setPointC(pointC);
 		
 		//利用context这个bean factory来getBean
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle)context.getBean("triangle2");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		//close the ApplicationContext when it is desktop application
+		//change applicationContext into AbstractApplicationContext
+		context.registerShutdownHook();
+		Triangle triangle = (Triangle)context.getBean("triangle1");
 		triangle.draw();
+		
 	}
 
 }

@@ -3,6 +3,8 @@ import java.util.*;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
@@ -14,7 +16,8 @@ import org.springframework.context.ApplicationContextAware;
 //private String beanName
 //再通过系统默认的setter方法得到他们的值，这样就得到了triangle这个class里面的值
 
-public class Triangle implements ApplicationContextAware, BeanNameAware{
+//public class Triangle implements ApplicationContextAware, BeanNameAware{
+public class Triangle implements InitializingBean, DisposableBean {
 //	private String type;
 //	private int height;
 //	
@@ -114,18 +117,34 @@ public class Triangle implements ApplicationContextAware, BeanNameAware{
 
 
 
+//	@Override
+//	public void setApplicationContext(ApplicationContext context) throws BeansException {
+//		// TODO Auto-generated method stub
+//		this.context = context;
+//	}
+
+
+
+	//@Override
+//	public void setBeanName(String beanName) {
+//		// TODO Auto-generated method stub
+//		this.beanName = beanName;
+//		System.out.println("Bean name is: " + beanName + "\n" + "这里的beanName指的是bean起的ID名字" );
+//	}
+
+
+
 	@Override
-	public void setApplicationContext(ApplicationContext context) throws BeansException {
+	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
-		this.context = context;
+		System.out.println("InitializingBean init method called for triangle");
 	}
 
 
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
-		this.beanName = beanName;
-		System.out.println("Bean name is: " + beanName + "\n" + "这里的beanName指的是bean起的ID名字" );
+		System.out.println("bean has destroied");
 	}
 }

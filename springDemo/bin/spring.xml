@@ -28,13 +28,13 @@
     <bean id="circle" class="springDemo.Circle" /> -->
     
     
-    <bean id="parentTriangle" class="springDemo.Triangle">
+    <bean id="parentTriangle" class="springDemo.Triangle" abstract="true">
         <property name="pointA" ref="pointA" />
         <!-- define as many point as you can to inheritance from this parentTriangle -->
     </bean>
     
     
-    <bean id="triangle1" class="springDemo.Triangle" parent="parentTriangle" abstract="true">
+    <bean id="triangle1" class="springDemo.Triangle" parent="parentTriangle" >
        <!-- <property name="points">
            <list>
                <ref bean="pointA" />
@@ -47,7 +47,7 @@
        <property name="pointC" ref="pointC" />
     </bean>
     
-    <bean id="triangle2" class="springDemo.Triangle" parent="parentTriangle">
+    <bean id="triangle2" class="springDemo.Triangle" parent="triangle1">
         <property name="pointB" ref="pointB" />
     </bean>
     
