@@ -6,6 +6,13 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+//如果需要得到triangle里面的相关内容的话
+//就需要getApplicationContext
+//首先需要implements ApplicationContextAware, BeanNameAware
+//然后声明 
+//private ApplicationContext context
+//private String beanName
+//再通过系统默认的setter方法得到他们的值，这样就得到了triangle这个class里面的值
 
 public class Triangle implements ApplicationContextAware, BeanNameAware{
 //	private String type;
@@ -45,7 +52,7 @@ public class Triangle implements ApplicationContextAware, BeanNameAware{
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
-	private ApplicationContext context = null;
+	private ApplicationContext context ;
 	private String beanName;
 	//private List<Point> points;
 	

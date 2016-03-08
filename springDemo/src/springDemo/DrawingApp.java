@@ -32,7 +32,7 @@ public class DrawingApp {
 		
 		//利用context这个bean factory来getBean
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle)context.getBean("triangle-alias");
+		Triangle triangle = (Triangle)context.getBean("triangle2");
 		triangle.draw();
 	}
 
