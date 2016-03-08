@@ -1,8 +1,13 @@
 package springDemo;
 import java.util.*;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
-public class Triangle {
+
+public class Triangle implements ApplicationContextAware, BeanNameAware{
 //	private String type;
 //	private int height;
 //	
@@ -40,7 +45,8 @@ public class Triangle {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
-	
+	private ApplicationContext context = null;
+	private String beanName;
 	//private List<Point> points;
 	
 	
@@ -97,5 +103,22 @@ public class Triangle {
 //	    for(Point point : points) {
 //	    	System.out.print("(" + point.getX() + "," + point.getY() + ")" + "\n");
 //	    }
+	}
+
+
+
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		// TODO Auto-generated method stub
+		this.context = context;
+	}
+
+
+
+	@Override
+	public void setBeanName(String beanName) {
+		// TODO Auto-generated method stub
+		this.beanName = beanName;
+		System.out.println("Bean name is: " + beanName + "\n" + "这里的beanName指的是bean起的ID名字" );
 	}
 }
