@@ -12,7 +12,7 @@ public class DrawingApp {
 		// TODO Auto-generated method stub
 		//Triangle triangle = new Triangle();
 //		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		
 //		Triangle triangle = (Triangle)context.getBean("triangle");
 //		triangle.draw();
 		
@@ -29,7 +29,9 @@ public class DrawingApp {
 //		triangle.setPointA(pointA);
 //		triangle.setPointB(pointB);
 //		triangle.setPointC(pointC);
+		
 		//利用context这个bean factory来getBean
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		Triangle triangle = (Triangle)context.getBean("triangle-alias");
 		triangle.draw();
 	}
