@@ -138,6 +138,7 @@ public class Triangle implements InitializingBean, DisposableBean {
 
 
 	@Override
+	//call back method
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("InitializingBean init method called for triangle");
@@ -146,6 +147,7 @@ public class Triangle implements InitializingBean, DisposableBean {
 
 
 	@Override
+	//call back method
 	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("bean has destroied");
