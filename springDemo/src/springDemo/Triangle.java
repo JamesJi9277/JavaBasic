@@ -17,6 +17,7 @@ import org.springframework.context.ApplicationContextAware;
 //再通过系统默认的setter方法得到他们的值，这样就得到了triangle这个class里面的值
 
 //public class Triangle implements ApplicationContextAware, BeanNameAware{
+//通过导入InitializingBean和DisposableBean来得到bean创建和销毁时候的信息
 public class Triangle implements InitializingBean, DisposableBean {
 //	private String type;
 //	private int height;
@@ -114,8 +115,10 @@ public class Triangle implements InitializingBean, DisposableBean {
 //	    	System.out.print("(" + point.getX() + "," + point.getY() + ")" + "\n");
 //	    }
 	}
-
-
+	
+	public void myInit() {
+		System.out.println("My init method called for Triangle");
+	}
 
 //	@Override
 //	public void setApplicationContext(ApplicationContext context) throws BeansException {

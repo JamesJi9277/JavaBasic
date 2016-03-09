@@ -34,7 +34,7 @@
     </bean>
     
     
-    <bean id="triangle1" class="springDemo.Triangle" parent="parentTriangle" >
+    <bean id="triangle1" class="springDemo.Triangle" parent="parentTriangle" init-method="myInit">
        <!-- <property name="points">
            <list>
                <ref bean="pointA" />

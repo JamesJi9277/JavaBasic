@@ -32,9 +32,10 @@ public class DrawingApp {
 //		triangle.setPointC(pointC);
 		
 		//利用context这个bean factory来getBean
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		
 		//close the ApplicationContext when it is desktop application
 		//change applicationContext into AbstractApplicationContext
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
 		Triangle triangle = (Triangle)context.getBean("triangle1");
 		triangle.draw();
