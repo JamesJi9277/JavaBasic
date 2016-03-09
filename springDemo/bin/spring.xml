@@ -2,7 +2,8 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
 
 
-<beans default-init-method="myInit" default-destroy-method="cleanUp">
+<!-- <beans default-init-method="myInit" default-destroy-method="cleanUp"> -->
+<beans>
     <!-- <bean id="triangle" class="springDemo.Triangle">
     这是用bean本身去对setter进行定义，利用property进行injection
         <property name="type" value="Equilateral" />
@@ -52,8 +53,8 @@
     </bean> -->
     
     <bean id="pointA" class="springDemo.Point">
-        <property name="x" value="0" />
-        <property name="y" value="0" />
+        <property name="x" value="${pointA.pointX}" />
+        <property name="y" value="${pointA.pointY}" />
     </bean>
     <bean id="pointB" class="springDemo.Point">
                 <property name="x" value="20" />
@@ -63,5 +64,10 @@
                 <property name="x" value="-20" />
                 <property name="y" value="0" />
      </bean>
+    <bean class="springDemo.MyBeanFactoryPP" />
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="pointsconfig.properties" />
+    </bean>
+    
     <bean class="springDemo.DisplayNameBeanPostProcessor" />
 </beans>

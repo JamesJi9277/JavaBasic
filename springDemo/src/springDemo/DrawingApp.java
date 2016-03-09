@@ -35,8 +35,8 @@ public class DrawingApp {
 		
 		//close the ApplicationContext when it is desktop application
 		//change applicationContext into AbstractApplicationContext
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		context.registerShutdownHook();
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		//context.registerShutdownHook();
 		Triangle triangle = (Triangle)context.getBean("triangle");
 		triangle.draw();
 		
