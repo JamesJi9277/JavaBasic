@@ -18,7 +18,8 @@ import org.springframework.context.ApplicationContextAware;
 
 //public class Triangle implements ApplicationContextAware, BeanNameAware{
 //通过导入InitializingBean和DisposableBean来得到bean创建和销毁时候的信息
-public class Triangle implements InitializingBean, DisposableBean {
+//public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle implements Shape {
 //	private String type;
 //	private int height;
 //	
@@ -108,6 +109,7 @@ public class Triangle implements InitializingBean, DisposableBean {
 
 
 	public void draw() {
+		System.out.println("Drawing Triangle");
 		System.out.println("Three points are\n" + "(" + this.getPointA().getX() + "," + this.getPointA().getY() + ")"
 				+ "  \n" + "(" + this.getPointB().getX() + "," + this.getPointB().getY()+ ")" 
 				+"\n" + "(" + this.getPointC().getX() + "," + this.getPointC().getY()+ ")");
@@ -137,21 +139,21 @@ public class Triangle implements InitializingBean, DisposableBean {
 
 
 
-	@Override
+	
 	//call back method
-	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("InitializingBean init method called for triangle");
-	}
+//	public void afterPropertiesSet() throws Exception {
+//		// TODO Auto-generated method stub
+//		System.out.println("InitializingBean init method called for triangle");
+//	}
 
 
 
-	@Override
+	
 	//call back method
-	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("bean has destroied");
-	}
+//	public void destroy() throws Exception {
+//		// TODO Auto-generated method stub
+//		System.out.println("bean has destroied");
+//	}
 	public void cleanUp() {
 		System.out.println("cleaned");
 	}

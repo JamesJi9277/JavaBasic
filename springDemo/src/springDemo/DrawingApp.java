@@ -39,7 +39,10 @@ public class DrawingApp {
 		//context.registerShutdownHook();
 		Triangle triangle = (Triangle)context.getBean("triangle");
 		triangle.draw();
-		
+		Circle circle = (Circle)context.getBean("circle");
+		circle.draw();
+		Shape shape = (Shape)context.getBean("circle");
+		shape.draw();
 	}
 
 }

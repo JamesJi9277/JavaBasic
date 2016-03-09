@@ -69,5 +69,12 @@
         <property name="locations" value="pointsconfig.properties" />
     </bean>
     
+    <bean id="circle" class="springDemo.Circle" >
+ 
+       <property name="center" ref="pointA" />
+       
+    </bean>
+    
+    
     <bean class="springDemo.DisplayNameBeanPostProcessor" />
 </beans>
