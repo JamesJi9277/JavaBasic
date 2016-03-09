@@ -152,4 +152,7 @@ public class Triangle implements InitializingBean, DisposableBean {
 		// TODO Auto-generated method stub
 		System.out.println("bean has destroied");
 	}
+	public void cleanUp() {
+		System.out.println("cleaned");
+	}
 }

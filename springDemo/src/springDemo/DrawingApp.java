@@ -37,7 +37,7 @@ public class DrawingApp {
 		//change applicationContext into AbstractApplicationContext
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
-		Triangle triangle = (Triangle)context.getBean("triangle1");
+		Triangle triangle = (Triangle)context.getBean("triangle");
 		triangle.draw();
 		
 	}

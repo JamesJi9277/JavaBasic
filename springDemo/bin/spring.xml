@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
 
 
-<beans>
+<beans default-init-method="myInit" default-destroy-method="cleanUp">
     <!-- <bean id="triangle" class="springDemo.Triangle">
     这是用bean本身去对setter进行定义，利用property进行injection
         <property name="type" value="Equilateral" />
@@ -28,13 +28,13 @@
     <bean id="circle" class="springDemo.Circle" /> -->
     
     
-    <bean id="parentTriangle" class="springDemo.Triangle" abstract="true">
+<!--     <bean id="parentTriangle" class="springDemo.Triangle" abstract="true">
         <property name="pointA" ref="pointA" />
-        <!-- define as many point as you can to inheritance from this parentTriangle -->
-    </bean>
+        define as many point as you can to inheritance from this parentTriangle
+    </bean> -->
     
     
-    <bean id="triangle1" class="springDemo.Triangle" parent="parentTriangle" init-method="myInit">
+    <bean id="triangle" class="springDemo.Triangle"  >
        <!-- <property name="points">
            <list>
                <ref bean="pointA" />
@@ -42,14 +42,14 @@
                <ref bean="pointC" />
            </list>
        </property> -->
-        
+       <property name="pointA" ref="pointA" />
        <property name="pointB" ref="pointB" />
        <property name="pointC" ref="pointC" />
     </bean>
     
-    <bean id="triangle2" class="springDemo.Triangle" parent="triangle1">
+   <!--  <bean id="triangle2" class="springDemo.Triangle" parent="triangle1">
         <property name="pointB" ref="pointB" />
-    </bean>
+    </bean> -->
     
     <bean id="pointA" class="springDemo.Point">
         <property name="x" value="0" />
@@ -58,10 +58,10 @@
     <bean id="pointB" class="springDemo.Point">
                 <property name="x" value="20" />
                 <property name="y" value="0" />
-            </bean>
+     </bean>
      <bean id="pointC" class="springDemo.Point">
                 <property name="x" value="-20" />
                 <property name="y" value="0" />
-            </bean>
-    
+     </bean>
+    <bean class="springDemo.DisplayNameBeanPostProcessor" />
 </beans>
