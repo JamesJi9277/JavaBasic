@@ -35,28 +35,28 @@
     </bean> -->
     
     
-    <bean id="triangle" class="springDemo.Triangle"  >
-       <!-- <property name="points">
+    <!-- <bean id="triangle" class="springDemo.Triangle"  >
+       <property name="points">
            <list>
                <ref bean="pointA" />
                <ref bean="pointB" />
                <ref bean="pointC" />
            </list>
-       </property> -->
+       </property>
        <property name="pointA" ref="pointA" />
        <property name="pointB" ref="pointB" />
        <property name="pointC" ref="pointC" />
-    </bean>
+    </bean> -->
     
    <!--  <bean id="triangle2" class="springDemo.Triangle" parent="triangle1">
         <property name="pointB" ref="pointB" />
     </bean> -->
     
-    <bean id="pointA" class="springDemo.Point">
+    <!-- <bean id="pointA" class="springDemo.Point">
         <property name="x" value="${pointA.pointX}" />
         <property name="y" value="${pointA.pointY}" />
-    </bean>
-    <bean id="pointB" class="springDemo.Point">
+    </bean> -->
+    <!-- <bean id="pointB" class="springDemo.Point">
                 <property name="x" value="20" />
                 <property name="y" value="0" />
      </bean>
@@ -67,14 +67,18 @@
     <bean class="springDemo.MyBeanFactoryPP" />
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" value="pointsconfig.properties" />
-    </bean>
+    </bean> -->
     
     <bean id="circle" class="springDemo.Circle" >
        <!-- 声明了一个对spring.xml的依赖 -->
-       <property name="center" ref="pointB" />
+<!--        Caused by: org.springframework.beans.factory.BeanInitializationException: Property 'center' is required for bean 'circle' -->
        
     </bean>
-    
-    
+    <bean id="pointA" class="springDemo.Point">
+      <property name="x" value="20" />
+      <property name="y" value="20" />
+    </bean>
+    <!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /> -->
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
     <bean class="springDemo.DisplayNameBeanPostProcessor" />
 </beans>
