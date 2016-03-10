@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+
 
 
 <!-- <beans default-init-method="myInit" default-destroy-method="cleanUp"> -->
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
     <!-- <bean id="triangle" class="springDemo.Triangle">
     这是用bean本身去对setter进行定义，利用property进行injection
         <property name="type" value="Equilateral" />
@@ -74,11 +78,20 @@
 <!--        Caused by: org.springframework.beans.factory.BeanInitializationException: Property 'center' is required for bean 'circle' -->
        
     </bean>
+    
     <bean id="pointA" class="springDemo.Point">
-      <property name="x" value="20" />
+    <qualifier value="circleRelated" />
+            <property name="x" value="20" />
       <property name="y" value="20" />
     </bean>
+    <bean id="pointB" class="springDemo.Point">
+                <property name="x" value="-20" />
+                <property name="y" value="0" />
+     </bean>
     <!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /> -->
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
-    <bean class="springDemo.DisplayNameBeanPostProcessor" />
+    
+    <context:annotation-config/>
+    <!-- 完美的替代了下面的逐个逐个的jar -->
+    <!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+    <bean class="springDemo.DisplayNameBeanPostProcessor" /> -->
 </beans>
