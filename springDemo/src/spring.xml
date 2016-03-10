@@ -70,8 +70,8 @@
     </bean>
     
     <bean id="circle" class="springDemo.Circle" >
- 
-       <property name="center" ref="pointA" />
+       <!-- 声明了一个对spring.xml的依赖 -->
+       <property name="center" ref="pointB" />
        
     </bean>
     
