@@ -6,8 +6,20 @@ import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 //import org.springframework.beans.factory.annotation.Required;
-
+//@Component
+//@Service
+//@Repository
+@Controller
+//跟MVC相关，利用到MVC可以用到这个
+//<context:component-scan base-package="springDemo" />
+//搭配这个xml语句来使用
+//这个Component的annotation的作用跟在spring.xml里面声明一个circle bean是一样的，
+//前提是已经有其他的annotation进行一些属性的注入，比如说property还有center
 public class Circle implements Shape{
 	private Point center;
 	
@@ -17,7 +29,7 @@ public class Circle implements Shape{
 //	@Required
 //	@Autowired
 //	@Qualifier("circleRelated")
-	@Resource(name="pointA")
+	@Resource(name="pointB")
 	//resource can do a dependency injection by name
 	public void setCenter(Point center) {
 		this.center = center;
@@ -30,7 +42,7 @@ public class Circle implements Shape{
 	public void destroyCircle() {
 		System.out.println("Destroy of circle");
 	}
-	
+	@Override
 	public void draw() {
 		// TODO Auto-generated method stub
 		System.out.println("Circle drawed");

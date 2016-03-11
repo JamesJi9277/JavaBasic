@@ -88,9 +88,15 @@
                 <property name="x" value="-20" />
                 <property name="y" value="0" />
      </bean>
+     
+     <context:component-scan base-package="springDemo" />
     <!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /> -->
     
-    <context:annotation-config/>
+    
+    <!-- define class as a bean, even not need to using circle bean-->
+    
+    
+    <context:annotation-config />
     <!-- 完美的替代了下面的逐个逐个的jar -->
     <!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
     <bean class="springDemo.DisplayNameBeanPostProcessor" /> -->
