@@ -95,7 +95,15 @@
     
     <!-- define class as a bean, even not need to using circle bean-->
     
-    
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" >
+        <!-- need to tell where is the propertities file -->
+        <property name="basenames">
+            <list>
+                <value>mymessages</value>
+            </list>
+        </property>
+    </bean>
+    <!-- this bean enable us to pick messages out of properties file -->
     <context:annotation-config />
     <!-- 完美的替代了下面的逐个逐个的jar -->
     <!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />

@@ -35,8 +35,7 @@ public class DrawingApp {
 		
 		//close the ApplicationContext when it is desktop application
 		//change applicationContext into AbstractApplicationContext
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		context.registerShutdownHook();
+		
 		//context.registerShutdownHook();
 //		Triangle triangle = (Triangle)context.getBean("triangle");
 //		triangle.draw();
@@ -44,8 +43,12 @@ public class DrawingApp {
 //		circle.draw();
 		//the shape interface only know it get a bean called circle
 		//does not know create a triangle or circle, 只是针对于bean去做文章
+		
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		context.registerShutdownHook();
 		Shape shape = (Shape)context.getBean("circle");
 		shape.draw();
+		System.out.println(context.getMessage("greeting", null, "default greeting", null));
 	}
 
 }
