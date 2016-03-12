@@ -85,8 +85,8 @@
       <property name="y" value="20" />
     </bean>
     <bean id="pointB" class="springDemo.Point">
-                <property name="x" value="-20" />
-                <property name="y" value="0" />
+                <property name="x" value="20" />
+                <property name="y" value="20" />
      </bean>
      
      <context:component-scan base-package="springDemo" />

@@ -58,7 +58,8 @@ public class Circle implements Shape{
 	public void draw() {
 		// TODO Auto-generated method stub
 		System.out.println(this.messagesource.getMessage("draw.Circle", null, "default drawing messages", null));
-		System.out.println("Center Point is " + "(" + center.getX() + "," + center.getY() + ")");
+		System.out.println(this.messagesource.getMessage("draw.Point", new Object[] {center.getX(), center.getY()}, "default point messages", null));
+		//System.out.println("Center Point is " + "(" + center.getX() + "," + center.getY() + ")");
 	    System.out.println(this.messagesource.getMessage("greeting", null, "default greeting", null));
 	}
 	
