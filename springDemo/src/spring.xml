@@ -86,9 +86,9 @@
     </bean>
     <bean id="pointB" class="springDemo.Point">
                 <property name="x" value="20" />
-                <property name="y" value="20" />
+                <property name="y" value="2 0" />
      </bean>
-     
+     <!-- 这是告诉程序要在整个包里面搜索用component annotation生命的bean class -->
      <context:component-scan base-package="springDemo" />
     <!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /> -->
     
