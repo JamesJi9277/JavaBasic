@@ -44,6 +44,13 @@ public class DrawingApp {
 		//the shape interface only know it get a bean called circle
 		//does not know create a triangle or circle, 只是针对于bean去做文章
 		
+		/*
+		 * ApplicationContext的优点：BeanFactory, Event Handling
+		 * 其中BeanFactory指的是将所有的bean存在一起，分为singleton和prototype两种初始化方法
+		 * 然后event handling有3 core components: event publisher, event listener and event itself
+		 * */
+		
+		
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
 		Shape shape = (Shape)context.getBean("circle");
