@@ -6,13 +6,18 @@
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 				http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
 				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    
+    <aop:aspectj-autoproxy />
+    <!-- 声明我需要用到aspect programming -->
+    
     <bean name="triangle" class="qiji.model.Triangle">
         <property name="name" value="Triangle name" />
     </bean>
-    
     <bean name="circle" class="qiji.model.Circle">
         <property name="name" value="Circle name" />
     </bean>
+    
     <bean name="shapeService" class="qiji.service.ShapeService" autowire="byName" />
-
+    
+    <bean name="loggingAspect" class="qiji.aspect.LoggingAspect" />
 </beans>
