@@ -19,7 +19,7 @@ public class AppMain {
 	     * autowired="byName"，就自动和triangle和circle匹配了*/
 	    
 	    System.out.println(shapeService.getCircle().getName());//use this flow to write an aspect
-	    
+	    System.out.println(shapeService.getTriangle().getName());
 	}
 
 }
