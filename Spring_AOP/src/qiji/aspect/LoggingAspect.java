@@ -1,6 +1,9 @@
 package qiji.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -41,15 +44,19 @@ public class LoggingAspect {
 		//可以这么使用
 		//Circle circle = (Circle) joinPoint.getTarget();
 	}
-	
-	@Before("args(time)")//或者name都可以。不管是什么就仅仅是一个名字而已在后面又说name，只要对应就行
+	//@Before和@After用法一样，同理
+	//@AfterReturning("args(time)")//或者name都可以。不管是什么就仅仅是一个名字而已在后面又说name，只要对应就行
+	@Before("args(time)")
 	//this argument only runs when a string is used as an argument
 	//在AppMain中我用了一个getCircle.setName()，就行当予传了一个string参数进来
 	//所以这个@Before会检测到，会进行输出，同时也会有一个setter函数，所以同样也会print一个事件
 	public void stringArgumentMethods(String time) {
 		System.out.println(time + "  A method that takes String arguments has been called");
 	}
-	
+//	@AfterThrowing("args(name)")
+//	public void exceptionAdvice(String name) {
+//		System.out.println("An exception has been thrown");
+//	}
 //	@Before("allGetters()") 
 //	public void secondAdvice() {
 //		System.out.println("Second Advice run. Get Method called");

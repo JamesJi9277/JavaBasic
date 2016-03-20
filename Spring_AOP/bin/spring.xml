@@ -15,6 +15,8 @@
     </bean>
     <bean name="circle" class="qiji.model.Circle">
         <property name="name" value="Circle name" />
+        <!-- 如果没有声明circle会造成Runtime error，
+        然后在aspect里面声明的AfterThrowing会进行捕捉 -->
     </bean>
     
     <bean name="shapeService" class="qiji.service.ShapeService" autowire="byName" />
