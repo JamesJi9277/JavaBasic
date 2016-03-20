@@ -25,7 +25,7 @@ public class LoggingAspect {
 	//因为我存在着getCircle返回的是一个circle，所以我在返回的类型上一样要设置成*
 	//如果对于函数里面的参数，arguments，不能够用*，因为*代表一定有东西，这样就忽略了没有arguments的情况
 	//所以这个时候需要用..来代替，..的意思是既可以是任意字符又可以是什么都没有
-	@Before("execution(* get*(..))") 
+	@Before("execution(* qiji.model.*.get*(..))") 
 	public void loggingAdvice() {
 		System.out.println("Advice run. Get Method called");
 	}
