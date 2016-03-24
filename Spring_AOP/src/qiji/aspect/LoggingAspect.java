@@ -1,9 +1,11 @@
 package qiji.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -53,6 +55,33 @@ public class LoggingAspect {
 	public void stringArgumentMethods(String time) {
 		System.out.println(time + "  A method that takes String arguments has been called");
 	}
+	
+	
+	//Around Advice, means thia methods willrun around the allCircleGetters method
+	@Around("allCircleGetters()")
+	public void myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+		
+		/*
+		 * 当里面的proceedingJoinPoint.proceed() run的时候
+		 * 在他前面的部分会先run
+		 * 在他后面的部分也会run
+		 * 这就是around advice*/
+		
+		try {
+			System.out.println("Before Advice");
+			//这前面的都是before advice
+			proceedingJoinPoint.proceed();
+			//这个后面的都是after advice
+			System.out.println("After Returning");
+		} catch (Throwable e) {
+			System.out.println("After Throwing");
+		}//this will execute around the advice that is advicing
+		
+		System.out.println("After Finally");
+		
+	}
+	
+	
 //	@AfterThrowing("args(name)")
 //	public void exceptionAdvice(String name) {
 //		System.out.println("An exception has been thrown");
@@ -75,4 +104,5 @@ public class LoggingAspect {
 	}
 	//can combine all getters and all setters
 	//@Pointcut(args())
+	
 }
