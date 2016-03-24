@@ -18,10 +18,11 @@ public class AppMain {
 	     * 之后因为在implement这个shapeService bean的时候，自动选择了
 	     * autowired="byName"，就自动和triangle和circle匹配了*/
 	    
-	    System.out.println(shapeService.getCircle().getName());//use this flow to write an aspect
+	    //System.out.println(shapeService.getCircle().getName());//use this flow to write an aspect
 	    //System.out.println(shapeService.getTriangle().getName());
 	    shapeService.getCircle();//for test around advice
-	    shapeService.getCircle().setName("Circle77");//test PointCut
+	    //shapeService.getCircle().setName("Circle77");//test PointCut
+	    shapeService.test();
 	}
 
 }

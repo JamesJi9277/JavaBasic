@@ -58,7 +58,14 @@ public class LoggingAspect {
 	
 	
 	//Around Advice, means thia methods willrun around the allCircleGetters method
-	@Around("allCircleGetters()")
+	//@Around("allCircleGetters()")
+	@Around("@annotation(qiji.aspect.Loggable)")
+	/*
+	 * 这样相当于是对全局的一个定义，注册一个annotation文件再用
+	 * @annotation(qiji.aspect.Loggable)去注册
+	 * 这样我无论在哪里只要在函数之前去添加这个annotation那么就可以找到这个定义
+	 * 跟class的定义差不多
+	 */
 	public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
 		
 		/*
@@ -100,6 +107,7 @@ public class LoggingAspect {
 //	public void allGetters() {
 //		//allGetters is a dummy method, it holds a Pointcut expression
 //	}
+	//@Pointcut("execution(* qiji.service.*.*(..))")//all methods within this package
 	@Pointcut("within(qiji.model.Circle)")//more readable,all method within this class
 	//@Pointcut("within(qiji.model.Circle)")代表只跟Circle有关
 	//只要检测到circle里面发声的时间或者是circle里面函数被call了，就会print事件名
