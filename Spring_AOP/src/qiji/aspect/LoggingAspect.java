@@ -59,18 +59,22 @@ public class LoggingAspect {
 	
 	//Around Advice, means thia methods willrun around the allCircleGetters method
 	@Around("allCircleGetters()")
-	public void myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+	public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
 		
 		/*
 		 * 当里面的proceedingJoinPoint.proceed() run的时候
 		 * 在他前面的部分会先run
 		 * 在他后面的部分也会run
 		 * 这就是around advice*/
-		
+		Object returnValue = null;
 		try {
 			System.out.println("Before Advice");
 			//这前面的都是before advice
-			proceedingJoinPoint.proceed();
+			returnValue = proceedingJoinPoint.proceed();
+			/*
+			 * if the proceed function return a value
+			 * then we need to modify void to Object to fit all situation
+			 */
 			//这个后面的都是after advice
 			System.out.println("After Returning");
 		} catch (Throwable e) {
@@ -78,7 +82,7 @@ public class LoggingAspect {
 		}//this will execute around the advice that is advicing
 		
 		System.out.println("After Finally");
-		
+		return returnValue;
 	}
 	
 	
