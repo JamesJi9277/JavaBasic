@@ -24,6 +24,7 @@ public void myDrawMethod(Shape shape) {
 Shape shape = new Triangle();
 shape.myDrawMethod();
 
+//更新一下
 //separting the dependency out of the whole class
 //跟interface很类似，当drawing的对象或者形状更换了的时候，drawing class不需要更改任何一行代码
 //只需要知道自己干的活是setter和drawing就够了
